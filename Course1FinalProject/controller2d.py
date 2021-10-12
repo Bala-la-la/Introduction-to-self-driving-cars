@@ -264,6 +264,11 @@ class Controller2D(object):
             self.set_throttle(throttle_output)  # in percent (0 to 1)
             self.set_steer(steer_output)  # in rad (-1.22 to 1.22)
             self.set_brake(brake_output)  # in percent (0 to 1)
+            #参考自https://github.com/ritz441/Self-driving-car/blob/main/controller2d.py
+            #另外采用stanley控制的 https://github.com/Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA/blob/master/controller2d.py
+            #mpc控制的https://github.com/sapan-ostic/Carla-Controllers/blob/main/Course1FinalProject/controller2d.py
+            #采用纯跟踪https://github.com/ahmedmoawad124/Self-Driving-Vehicle-Control/blob/master/controller2d.py
+            #全面的大佬https://github.com/munirjojoverge/Self-Driving-Vehicle-Control-Using-Carla
 
         ######################################################
         ######################################################
