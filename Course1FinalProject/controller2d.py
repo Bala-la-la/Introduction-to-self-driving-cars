@@ -217,6 +217,7 @@ class Controller2D(object):
                         self._current_y - waypoints[idx][1]) * np.cos(alpha)
 
             yaw_path = np.arctan2(waypoints[idy][1] - waypoints[idx][1], waypoints[idy][0] - waypoints[idx][0])
+
             theta_fai = yaw_path - yaw
 
             if theta_fai > np.pi:
@@ -228,8 +229,9 @@ class Controller2D(object):
 
             crosstrack_error = laterr
             yaw_cross_track = np.arctan2(y - waypoints[0][1], x - waypoints[0][0])
-            yaw_path2ct = np.arctan2(waypoints[-1][1] - waypoints[0][1],
-                                     waypoints[-1][0] - waypoints[0][0]) - yaw_cross_track
+            #yaw_path2ct = np.arctan2(waypoints[-1][1] - waypoints[0][1],
+            #                         waypoints[-1][0] - waypoints[0][0]) - yaw_cross_track
+            yaw_path2ct = yaw_path - yaw_cross_track
             if yaw_path2ct > np.pi:
                 yaw_path2ct -= 2 * np.pi
             if yaw_path2ct < - np.pi:
